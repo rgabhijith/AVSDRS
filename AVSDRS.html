@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arya Vysya Sanathana Dharma Rakshana Samithi | Bengaluru</title>
+<meta name="description" content="Arya Vysya Sanathana Dharma Rakshana Samithi – Public Charitable & Religious Trust, K.R. Puram Bengaluru.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Cinzel:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════
+   GLOBAL TOKENS & RESET
+══════════════════════════════════════════ */
+:root {
+  --saffron:#E8621A; --saffron-light:#F4873D;
+  --gold:#C8922A;    --gold-light:#F0C040;
+  --cream:#FDF6EC;   --maroon:#6B1A1A; --maroon-deep:#4A0E0E;
+  --text-dark:#2A1A0A; --text-mid:#5A3E28; --text-light:#8A6A4A;
+  --white:#FFFFFF;   --border:rgba(200,146,42,0.25);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+
+/* ══════════════════════════════════════════
+   PAGE SWITCHER
+══════════════════════════════════════════ */
+.page{display:none;}
+.page.active{display:block;}
+
+/* ══════════════════════════════════════════
+   NAVBAR
+══════════════════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:0 4%;display:flex;justify-content:space-between;align-items:stretch;
+  background:rgba(253,246,236,0.97);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);transition:box-shadow 0.3s;min-height:66px;
+}
+nav.scrolled{box-shadow:0 2px 30px rgba(107,26,26,0.13);}
+.nav-brand{display:flex;align-items:center;gap:0.7rem;text-decoration:none;padding:0.7rem 0;cursor:pointer;}
+.nav-om{font-size:1.55rem;color:var(--saffron);line-height:1;}
+.nav-name{font-family:'Cinzel',serif;font-size:0.72rem;font-weight:700;color:var(--maroon);letter-spacing:0.04em;line-height:1.3;}
+.nav-links{display:flex;gap:0;list-style:none;align-items:stretch;}
+.nav-links li{display:flex;align-items:center;}
+.nav-links a,.nav-links button{
+  font-family:'Jost',sans-serif;font-size:0.76rem;font-weight:500;letter-spacing:0.07em;
+  text-transform:uppercase;color:var(--text-mid);text-decoration:none;background:none;border:none;
+  padding:0 0.85rem;display:flex;align-items:center;height:100%;
+  border-bottom:3px solid transparent;cursor:pointer;
+  transition:color 0.2s,border-color 0.2s,background 0.2s;
+}
+.nav-links a:hover,.nav-links button:hover{color:var(--saffron);border-bottom-color:var(--saffron);}
+.nav-active{color:var(--saffron)!important;border-bottom-color:var(--saffron)!important;font-weight:700!important;}
+.nav-home-btn{background:var(--cream)!important;color:var(--maroon)!important;border:1px solid var(--border)!important;border-bottom:3px solid var(--gold)!important;margin-right:0.2rem;}
+.nav-home-btn:hover{background:var(--maroon)!important;color:var(--gold-light)!important;}
+.nav-blog-btn{color:var(--maroon)!important;font-weight:700!important;position:relative;}
+.nav-blog-btn::after{content:'NEW';font-size:0.48rem;background:var(--saffron);color:#fff;padding:0.1rem 0.28rem;position:absolute;top:12px;right:0;letter-spacing:0.04em;border-radius:2px;line-height:1.5;}
+.nav-live-btn{background:#CC0000!important;color:#fff!important;padding:0 1rem!important;display:flex!important;align-items:center;gap:0.4rem;border-bottom:3px solid #990000!important;animation:livePulse 2s ease-in-out infinite;}
+.nav-live-btn:hover{background:#AA0000!important;}
+@keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(204,0,0,0.4);}50%{box-shadow:0 0 0 6px rgba(204,0,0,0);}}
+.live-dot{width:7px;height:7px;background:#fff;border-radius:50%;animation:dotBlink 1.2s ease-in-out infinite;display:inline-block;flex-shrink:0;}
+@keyframes dotBlink{0%,100%{opacity:1;}50%{opacity:0.15;}}
+.nav-donate-btn{background:var(--maroon)!important;color:var(--gold-light)!important;padding:0 1.2rem!important;border-bottom:3px solid var(--saffron)!important;margin-left:0.2rem;}
+.nav-donate-btn:hover{background:var(--saffron)!important;color:#fff!important;}
+/* Hamburger */
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:0.5rem;background:none;border:none;}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--maroon);transition:all 0.3s;}
+.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+/* Drawer */
+.nav-drawer{display:none;position:fixed;top:66px;left:0;right:0;background:rgba(253,246,236,0.99);backdrop-filter:blur(16px);border-bottom:2px solid var(--border);padding:0.8rem 5% 1.5rem;z-index:199;flex-direction:column;box-shadow:0 8px 30px rgba(107,26,26,0.12);}
+.nav-drawer.open{display:flex;}
+.nav-drawer a,.nav-drawer button{font-family:'Jost',sans-serif;font-size:0.88rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;background:none;border:none;padding:0.8rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;cursor:pointer;transition:color 0.2s;text-align:left;}
+.nav-drawer a:last-child,.nav-drawer button:last-child{border-bottom:none;}
+.nav-drawer a:hover,.nav-drawer button:hover{color:var(--saffron);}
+.drawer-donate{background:var(--maroon)!important;color:var(--gold-light)!important;padding:0.8rem 1.2rem!important;margin-top:0.5rem;border:none!important;justify-content:center!important;}
+
+/* ══════════════════════════════════════════
+   SHARED SECTION STYLES
+══════════════════════════════════════════ */
+section{padding:5.5rem 5%;}
+.section-tag{font-size:0.68rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--saffron);margin-bottom:0.7rem;}
+.section-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--maroon-deep);margin-bottom:0.9rem;line-height:1.2;}
+.section-divider{width:56px;height:3px;background:linear-gradient(90deg,var(--saffron),var(--gold));margin-bottom:1.4rem;}
+.section-intro{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--text-mid);line-height:1.8;max-width:640px;}
+.btn-primary{background:var(--maroon);color:var(--gold-light);font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:0.1em;padding:0.95rem 2rem;text-decoration:none;border:none;cursor:pointer;transition:all 0.3s;position:relative;overflow:hidden;display:inline-block;}
+.btn-primary::after{content:'';position:absolute;inset:0;background:var(--saffron);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;z-index:-1;}
+.btn-primary:hover{color:#fff;}
+.btn-primary:hover::after{transform:scaleX(1);}
+.btn-secondary{background:transparent;color:var(--maroon);font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:0.1em;padding:0.95rem 2rem;text-decoration:none;border:1.5px solid var(--maroon);cursor:pointer;transition:all 0.3s;display:inline-block;}
+.btn-secondary:hover{background:var(--maroon);color:var(--gold-light);}
+/* Reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.rd1{transition-delay:0.1s;}.rd2{transition-delay:0.2s;}.rd3{transition-delay:0.3s;}
+
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;padding:7rem 5% 4rem;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(232,98,26,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 20% 80%,rgba(107,26,26,0.08) 0%,transparent 50%),linear-gradient(160deg,#FDF6EC 0%,#FFF0DC 50%,#FDF6EC 100%);}
+.mandala-ring{position:absolute;border-radius:50%;border:1px solid rgba(200,146,42,0.15);animation:mSpin linear infinite;}
+.mandala-ring:nth-child(1){width:600px;height:600px;right:-100px;top:-100px;animation-duration:120s;}
+.mandala-ring:nth-child(2){width:420px;height:420px;right:-10px;top:-10px;border-color:rgba(232,98,26,0.12);animation-duration:80s;animation-direction:reverse;}
+.mandala-ring:nth-child(3){width:250px;height:250px;right:90px;top:90px;border-color:rgba(200,146,42,0.2);animation-duration:50s;}
+@keyframes mSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.hero-content{position:relative;z-index:2;max-width:680px;animation:fadeUp 1s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.hero-tag{display:inline-block;font-size:0.68rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--saffron);border:1px solid rgba(232,98,26,0.4);padding:0.32rem 0.9rem;margin-bottom:1.4rem;animation:fadeUp 1s 0.1s ease both;}
+.hero-om{font-size:4.2rem;color:var(--gold);line-height:1;margin-bottom:0.4rem;animation:fadeUp 1s 0.2s ease both;display:block;text-shadow:0 2px 20px rgba(200,146,42,0.3);}
+.hero h1{font-family:'Cinzel',serif;font-size:clamp(1.9rem,4vw,3.1rem);font-weight:700;color:var(--maroon-deep);line-height:1.15;margin-bottom:0.5rem;animation:fadeUp 1s 0.3s ease both;}
+.hero h1 span{color:var(--saffron);}
+.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;color:var(--gold);margin-bottom:1.1rem;animation:fadeUp 1s 0.4s ease both;}
+.hero p{font-size:0.96rem;color:var(--text-mid);line-height:1.8;max-width:530px;margin-bottom:2.2rem;animation:fadeUp 1s 0.5s ease both;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 1s 0.6s ease both;}
+
+/* ══════════════════════════════════════════
+   STATS BAR
+══════════════════════════════════════════ */
+.stats-bar{background:var(--maroon-deep);padding:1.8rem 5%;display:flex;justify-content:space-around;gap:1rem;flex-wrap:wrap;}
+.stat{text-align:center;color:var(--cream);padding:0.5rem 1rem;opacity:0;transform:translateY(18px);transition:all 0.6s ease;}
+.stat.visible{opacity:1;transform:translateY(0);}
+.stat-number{font-family:'Cinzel',serif;font-size:2.1rem;color:var(--gold-light);line-height:1;display:block;}
+.stat-label{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,246,236,0.55);margin-top:0.25rem;display:block;}
+
+/* ══════════════════════════════════════════
+   ABOUT
+══════════════════════════════════════════ */
+.about{background:var(--white);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center;margin-top:2.8rem;}
+.about-facts{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:1.8rem;}
+.fact-card{background:var(--cream);border-left:3px solid var(--gold);padding:0.9rem 1.1rem;}
+.fact-label{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-light);margin-bottom:0.25rem;}
+.fact-value{font-family:'Cormorant Garamond',serif;font-size:0.98rem;font-weight:600;color:var(--maroon);}
+.lotus-container{width:300px;height:300px;margin:0 auto;}
+.lotus-container svg{width:100%;height:100%;animation:lotusPulse 4s ease-in-out infinite;}
+@keyframes lotusPulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 18px rgba(232,98,26,0.2));}50%{transform:scale(1.03);filter:drop-shadow(0 0 32px rgba(232,98,26,0.4));}}
+
+/* ══════════════════════════════════════════
+   OBJECTS / MISSION
+══════════════════════════════════════════ */
+.objects{background:var(--cream);}
+.objects-tabs{display:flex;margin:2.2rem 0 1.8rem;border-bottom:2px solid var(--border);}
+.tab-btn{font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.07em;padding:0.75rem 1.8rem;background:none;border:none;cursor:pointer;color:var(--text-light);border-bottom:3px solid transparent;margin-bottom:-2px;transition:all 0.3s;}
+.tab-btn.active{color:var(--saffron);border-bottom-color:var(--saffron);}
+.tab-content{display:none;}
+.tab-content.active{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1.1rem;}
+.obj-card{background:var(--white);padding:1.4rem;border:1px solid var(--border);transition:all 0.3s;position:relative;overflow:hidden;}
+.obj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--saffron),var(--gold));transform:scaleX(0);transition:transform 0.3s;}
+.obj-card:hover{box-shadow:0 8px 28px rgba(107,26,26,0.08);transform:translateY(-3px);}
+.obj-card:hover::before{transform:scaleX(1);}
+.obj-icon{font-size:1.9rem;margin-bottom:0.65rem;display:block;}
+.obj-title{font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--maroon);margin-bottom:0.35rem;}
+.obj-desc{font-size:0.83rem;color:var(--text-mid);line-height:1.6;}
+
+/* ══════════════════════════════════════════
+   TRUSTEES
+══════════════════════════════════════════ */
+.trustees{background:var(--maroon-deep);color:var(--cream);}
+.trustees .section-title{color:var(--gold-light);}
+.trustees .section-tag{color:var(--gold);}
+.trustees .section-divider{background:linear-gradient(90deg,var(--gold),var(--saffron));}
+.trustees .section-intro{color:rgba(253,246,236,0.65);}
+.office-bearers{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin:2.2rem 0 2.5rem;}
+.bearer-card{border:1px solid rgba(200,146,42,0.3);padding:1.8rem 1.2rem;text-align:center;background:rgba(255,255,255,0.04);transition:all 0.3s;}
+.bearer-card:hover{background:rgba(232,98,26,0.1);border-color:var(--saffron);}
+.bearer-photo{width:88px;height:88px;border-radius:50%;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:1.5rem;color:#fff;font-weight:700;border:2px solid rgba(200,146,42,0.45);overflow:hidden;position:relative;}
+.bearer-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.bearer-photo span{position:relative;z-index:1;}
+.bearer-role{font-size:0.64rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.35rem;}
+.bearer-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--cream);}
+.upload-hint{font-size:0.6rem;color:rgba(253,246,236,0.2);margin-top:0.3rem;font-style:italic;}
+/* All trustees grid */
+.all-trustees-label{font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.all-trustees-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1.1rem;margin-top:0.5rem;}
+.trustee-card{background:rgba(255,255,255,0.05);border:1px solid rgba(200,146,42,0.2);padding:1.3rem 0.9rem;text-align:center;transition:all 0.3s;}
+.trustee-card:hover{background:rgba(232,98,26,0.1);border-color:rgba(200,146,42,0.5);transform:translateY(-3px);}
+.trustee-photo{width:72px;height:72px;border-radius:50%;margin:0 auto 0.8rem;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:1.3rem;color:#fff;font-weight:700;border:2px solid rgba(200,146,42,0.35);overflow:hidden;position:relative;}
+.trustee-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.tc1{background:linear-gradient(135deg,#8B3A3A,#5A1A1A);}
+.tc2{background:linear-gradient(135deg,#7A4A1A,#4A2A0A);}
+.tc3{background:linear-gradient(135deg,#3A5A3A,#1A3A1A);}
+.tc4{background:linear-gradient(135deg,#1A3A5A,#0A1A4A);}
+.tc5{background:linear-gradient(135deg,#5A3A7A,#3A1A5A);}
+.tc6{background:linear-gradient(135deg,#7A5A1A,#5A3A0A);}
+.tc7{background:linear-gradient(135deg,#1A5A5A,#0A3A3A);}
+.tc8{background:linear-gradient(135deg,#6B3A2A,#4A1A0A);}
+.trustee-card-name{font-family:'Cormorant Garamond',serif;font-size:0.9rem;font-weight:600;color:var(--cream);line-height:1.3;margin-bottom:0.2rem;}
+.trustee-card-role{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
+.trustee-note{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(253,246,236,0.45);font-size:0.95rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(200,146,42,0.2);}
+
+/* ══════════════════════════════════════════
+   DONATE
+══════════════════════════════════════════ */
+.donate{background:var(--white);}
+.donate-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2.8rem;align-items:start;}
+.donate-info p{font-size:0.93rem;color:var(--text-mid);line-height:1.8;margin-bottom:1.3rem;}
+.tax-badge{background:linear-gradient(135deg,#F0F9F0,#E8F5E8);border:1px solid #4CAF50;border-left:4px solid #4CAF50;padding:0.9rem 1.1rem;margin-bottom:1.8rem;}
+.tax-badge-title{font-family:'Cinzel',serif;font-size:0.78rem;color:#2E7D32;margin-bottom:0.25rem;}
+.tax-badge p{font-size:0.8rem;color:#388E3C;margin:0;}
+.donate-tiers{display:grid;grid-template-columns:1fr 1fr;gap:0.65rem;margin-bottom:1.3rem;}
+.tier{border:1.5px solid var(--border);padding:0.9rem;text-align:center;cursor:pointer;transition:all 0.2s;background:var(--cream);}
+.tier:hover,.tier.selected{border-color:var(--saffron);background:rgba(232,98,26,0.05);}
+.tier-amount{font-family:'Cinzel',serif;font-size:1.25rem;color:var(--maroon);display:block;}
+.tier-label{font-size:0.68rem;color:var(--text-light);letter-spacing:0.1em;text-transform:uppercase;margin-top:0.15rem;display:block;}
+.donate-form input{width:100%;padding:0.85rem 1rem;border:1.5px solid var(--border);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.88rem;color:var(--text-dark);outline:none;margin-bottom:0.7rem;transition:border-color 0.2s;}
+.donate-form input:focus{border-color:var(--saffron);}
+.donate-form input::placeholder{color:var(--text-light);}
+
+/* ══════════════════════════════════════════
+   MEMBERSHIP
+══════════════════════════════════════════ */
+.membership{background:linear-gradient(160deg,var(--cream) 0%,#FFF5E6 100%);}
+.membership-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2.8rem;align-items:start;}
+.membership-benefits{list-style:none;}
+.membership-benefits li{display:flex;gap:0.9rem;align-items:flex-start;padding:0.85rem 0;border-bottom:1px solid var(--border);font-size:0.93rem;color:var(--text-mid);}
+.membership-benefits li:last-child{border-bottom:none;}
+.benefit-icon{color:var(--saffron);font-size:1.15rem;flex-shrink:0;margin-top:0.1rem;}
+.membership-form{background:var(--white);padding:2.2rem;border:1px solid var(--border);}
+.membership-form h3{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--maroon);margin-bottom:1.3rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;}
+.membership-form input,.membership-form select,.membership-form textarea,.contact-form input,.contact-form textarea{width:100%;padding:0.82rem 0.95rem;border:1.5px solid var(--border);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.86rem;color:var(--text-dark);outline:none;margin-bottom:0.7rem;transition:border-color 0.2s;}
+.membership-form input:focus,.membership-form textarea:focus,.contact-form input:focus,.contact-form textarea:focus{border-color:var(--saffron);}
+.membership-form input::placeholder,.membership-form textarea::placeholder,.contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--text-light);}
+.membership-form textarea,.contact-form textarea{height:88px;resize:none;}
+
+/* ══════════════════════════════════════════
+   EVENTS
+══════════════════════════════════════════ */
+.events{background:var(--white);}
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.8rem;}
+.event-card{border:1px solid var(--border);overflow:hidden;transition:all 0.3s;}
+.event-card:hover{box-shadow:0 10px 36px rgba(107,26,26,0.1);transform:translateY(-4px);}
+.event-header{background:linear-gradient(135deg,var(--maroon),var(--maroon-deep));padding:1.4rem;display:flex;justify-content:space-between;align-items:center;}
+.event-date-block{text-align:center;color:var(--gold-light);}
+.event-day{font-family:'Cinzel',serif;font-size:1.9rem;line-height:1;display:block;}
+.event-month{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(253,246,236,0.55);}
+.event-icon-big{font-size:2.8rem;opacity:0.55;}
+.event-body{padding:1.4rem;background:var(--cream);}
+.event-type{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--saffron);margin-bottom:0.35rem;}
+.event-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--maroon);margin-bottom:0.45rem;}
+.event-desc{font-size:0.83rem;color:var(--text-mid);line-height:1.6;margin-bottom:0.9rem;}
+.event-link{font-size:0.76rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--saffron);text-decoration:none;display:flex;align-items:center;gap:0.35rem;transition:gap 0.2s;}
+.event-link:hover{gap:0.65rem;}
+
+/* ══════════════════════════════════════════
+   CONTACT
+══════════════════════════════════════════ */
+.contact{background:var(--cream);}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;margin-top:2.8rem;}
+.contact-info-item{display:flex;gap:1.1rem;align-items:flex-start;margin-bottom:1.8rem;}
+.contact-icon{width:44px;height:44px;background:var(--maroon);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;}
+.contact-label{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--saffron);margin-bottom:0.22rem;}
+.contact-value{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--text-dark);line-height:1.5;}
+.contact-form{background:var(--white);padding:2.2rem;border:1px solid var(--border);}
+.contact-form h3{font-family:'Cinzel',serif;font-size:1.05rem;color:var(--maroon);margin-bottom:1.3rem;}
+
+/* ══════════════════════════════════════════
+   LIVE MODAL
+══════════════════════════════════════════ */
+.live-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.76);z-index:9000;align-items:center;justify-content:center;}
+.live-modal-overlay.open{display:flex;}
+.live-modal{background:var(--maroon-deep);border:1px solid rgba(200,146,42,0.4);padding:2.4rem;max-width:470px;width:90%;text-align:center;animation:fadeUp 0.3s ease;position:relative;}
+.live-modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:rgba(253,246,236,0.45);font-size:1.4rem;cursor:pointer;line-height:1;}
+.live-modal-close:hover{color:var(--gold-light);}
+.live-modal h2{font-family:'Cinzel',serif;font-size:1.25rem;color:var(--gold-light);margin:0.9rem 0 0.45rem;}
+.live-modal p{font-size:0.86rem;color:rgba(253,246,236,0.58);margin-bottom:1.6rem;line-height:1.6;}
+.live-platform-btn{display:flex;align-items:center;justify-content:center;gap:0.7rem;width:100%;padding:0.95rem 1.4rem;background:#FF0000;color:#fff;font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.05em;border:none;cursor:pointer;text-decoration:none;margin-bottom:0.7rem;transition:background 0.2s;}
+.live-platform-btn:hover{background:#CC0000;}
+.live-platform-btn svg{width:22px;height:22px;fill:white;flex-shrink:0;}
+.live-schedule-note{font-size:0.72rem;color:rgba(253,246,236,0.32);margin-top:0.9rem;font-style:italic;}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer{background:var(--maroon-deep);color:var(--cream);padding:3.5rem 5% 1.8rem;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.8rem;margin-bottom:2.5rem;}
+.footer-brand h3{font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold-light);margin-bottom:0.7rem;line-height:1.4;}
+.footer-brand p{font-size:0.8rem;color:rgba(253,246,236,0.45);line-height:1.7;margin-bottom:1.1rem;}
+.footer-om{font-size:2.4rem;color:var(--gold);opacity:0.45;}
+.footer-col h4{font-family:'Cinzel',serif;font-size:0.76rem;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.9rem;text-transform:uppercase;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:0.55rem;}
+.footer-col ul li a,.footer-col ul li button{font-size:0.8rem;color:rgba(253,246,236,0.5);text-decoration:none;background:none;border:none;cursor:pointer;transition:color 0.2s;padding:0;text-align:left;}
+.footer-col ul li a:hover,.footer-col ul li button:hover{color:var(--gold-light);}
+.footer-bottom{border-top:1px solid rgba(200,146,42,0.2);padding-top:1.8rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-bottom p{font-size:0.72rem;color:rgba(253,246,236,0.32);}
+.footer-legal{font-size:0.7rem;color:rgba(253,246,236,0.32);display:flex;gap:1.3rem;}
+.footer-legal span{display:flex;align-items:center;gap:0.3rem;}
+.footer-legal span::before{content:'✓';color:var(--gold);font-size:0.78rem;}
+
+/* ══════════════════════════════════════════
+   BLOG PAGE STYLES
+══════════════════════════════════════════ */
+.blog-page{padding-top:66px;}
+.blog-hero{padding:5rem 5% 3.5rem;background:linear-gradient(160deg,var(--maroon-deep) 0%,#3A0808 100%);position:relative;overflow:hidden;}
+.blog-hero::before{content:'ॐ';position:absolute;right:5%;top:50%;transform:translateY(-50%);font-size:18rem;color:rgba(200,146,42,0.05);line-height:1;pointer-events:none;}
+.blog-hero-tag{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.9rem;display:block;}
+.blog-hero h1{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,3rem);color:var(--gold-light);font-weight:700;line-height:1.2;margin-bottom:0.65rem;}
+.blog-hero p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:rgba(253,246,236,0.62);max-width:480px;}
+/* Filter */
+.filter-bar{background:var(--white);padding:1rem 5%;border-bottom:1px solid var(--border);display:flex;gap:0.65rem;flex-wrap:wrap;align-items:center;position:sticky;top:66px;z-index:50;}
+.filter-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-light);margin-right:0.4rem;}
+.filter-btn{font-family:'Jost',sans-serif;font-size:0.76rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:0.4rem 0.9rem;border:1.5px solid var(--border);background:none;cursor:pointer;color:var(--text-mid);transition:all 0.2s;}
+.filter-btn:hover,.filter-btn.active{background:var(--maroon);color:var(--gold-light);border-color:var(--maroon);}
+/* Blog layout */
+.blog-layout{display:grid;grid-template-columns:1fr 300px;gap:2.8rem;padding:3.5rem 5%;max-width:1280px;margin:0 auto;}
+/* Featured */
+.featured-post{background:var(--white);border:1px solid var(--border);margin-bottom:2.2rem;display:grid;grid-template-columns:1.15fr 1fr;overflow:hidden;transition:box-shadow 0.3s;cursor:pointer;}
+.featured-post:hover{box-shadow:0 12px 38px rgba(107,26,26,0.1);}
+.featured-img{background:linear-gradient(135deg,var(--maroon-deep),#8B2A2A);display:flex;align-items:center;justify-content:center;min-height:270px;position:relative;}
+.featured-img-icon{font-size:5rem;opacity:0.38;}
+.featured-img-label{position:absolute;top:1rem;left:1rem;background:var(--saffron);color:#fff;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.28rem 0.65rem;}
+.featured-body{padding:1.8rem;display:flex;flex-direction:column;justify-content:center;}
+.post-category{font-size:0.63rem;letter-spacing:0.17em;text-transform:uppercase;color:var(--saffron);margin-bottom:0.55rem;}
+.post-title{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:600;color:var(--maroon-deep);line-height:1.3;margin-bottom:0.65rem;cursor:pointer;}
+.post-title:hover{color:var(--saffron);}
+.post-excerpt{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.1rem;flex:1;}
+.post-meta{display:flex;gap:0.9rem;align-items:center;font-size:0.72rem;color:var(--text-light);flex-wrap:wrap;}
+.read-more{font-size:0.76rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--saffron);text-decoration:none;display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.9rem;background:none;border:none;cursor:pointer;transition:gap 0.2s;padding:0;}
+.read-more:hover{gap:0.65rem;}
+/* Post grid */
+.post-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+.post-card{background:var(--white);border:1px solid var(--border);overflow:hidden;transition:all 0.3s;cursor:pointer;}
+.post-card:hover{box-shadow:0 8px 28px rgba(107,26,26,0.09);transform:translateY(-3px);}
+.post-card-img{height:145px;display:flex;align-items:center;justify-content:center;position:relative;}
+.cat-religious{background:linear-gradient(135deg,#4A0E0E,#8B2A2A);}
+.cat-charitable{background:linear-gradient(135deg,#0E3A0E,#2A7A2A);}
+.cat-cultural{background:linear-gradient(135deg,#2A1A0A,#7A4A1A);}
+.cat-announcement{background:linear-gradient(135deg,#0A0E3A,#1A2A8B);}
+.post-card-img-icon{font-size:2.8rem;opacity:0.38;}
+.post-card-body{padding:1.1rem 1.3rem;}
+.post-card-body .post-title{font-size:0.98rem;margin-bottom:0.45rem;}
+.post-card-body .post-excerpt{font-size:0.86rem;-webkit-line-clamp:3;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:0.65rem;}
+/* Full post */
+.full-post{display:none;}
+.full-post.open{display:block;}
+.post-list-view.hidden{display:none;}
+.full-post-back{display:inline-flex;align-items:center;gap:0.45rem;font-size:0.76rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--saffron);cursor:pointer;margin-bottom:1.8rem;background:none;border:none;font-family:'Jost',sans-serif;transition:gap 0.2s;padding:0;}
+.full-post-back:hover{gap:0.75rem;}
+.full-post-header{margin-bottom:1.8rem;}
+.full-post-header h1{font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2rem);color:var(--maroon-deep);line-height:1.25;margin:0.45rem 0 0.9rem;}
+.full-post-banner{width:100%;height:280px;display:flex;align-items:center;justify-content:center;margin-bottom:2.2rem;font-size:5.5rem;opacity:0.45;background:linear-gradient(135deg,var(--maroon-deep),#8B2A2A);}
+.full-post-content{font-family:'Cormorant Garamond',serif;font-size:1.12rem;color:var(--text-mid);line-height:1.9;max-width:700px;}
+.full-post-content h2{font-family:'Cinzel',serif;font-size:1.25rem;color:var(--maroon);margin:1.8rem 0 0.65rem;}
+.full-post-content p{margin-bottom:1.1rem;}
+.full-post-content blockquote{border-left:3px solid var(--gold);padding:0.7rem 1.4rem;background:var(--white);margin:1.4rem 0;font-style:italic;color:var(--maroon);}
+/* Sidebar */
+.sidebar-widget{background:var(--white);border:1px solid var(--border);padding:1.6rem;margin-bottom:1.4rem;}
+.sidebar-widget h3{font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.06em;color:var(--maroon);margin-bottom:1.1rem;padding-bottom:0.7rem;border-bottom:1px solid var(--border);}
+.recent-post-item{display:flex;gap:0.85rem;align-items:flex-start;padding:0.75rem 0;border-bottom:1px solid var(--border);cursor:pointer;}
+.recent-post-item:last-child{border-bottom:none;padding-bottom:0;}
+.rp-icon{width:40px;height:40px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--cream);font-size:1.15rem;border:1px solid var(--border);}
+.rp-title{font-family:'Cormorant Garamond',serif;font-size:0.92rem;font-weight:600;color:var(--maroon);line-height:1.3;margin-bottom:0.18rem;}
+.rp-title:hover{color:var(--saffron);}
+.rp-date{font-size:0.68rem;color:var(--text-light);}
+.category-list{list-style:none;}
+.category-list li{display:flex;justify-content:space-between;align-items:center;padding:0.55rem 0;border-bottom:1px solid var(--border);}
+.category-list li:last-child{border-bottom:none;}
+.category-list a{font-size:0.83rem;color:var(--text-mid);text-decoration:none;display:flex;align-items:center;gap:0.45rem;transition:color 0.2s;cursor:pointer;}
+.category-list a:hover{color:var(--saffron);}
+.cat-count{font-size:0.68rem;color:var(--text-light);background:var(--cream);padding:0.12rem 0.45rem;border:1px solid var(--border);}
+.subscribe-form input{width:100%;padding:0.75rem 0.9rem;border:1.5px solid var(--border);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.83rem;color:var(--text-dark);outline:none;margin-bottom:0.55rem;}
+.subscribe-form input:focus{border-color:var(--saffron);}
+.subscribe-form input::placeholder{color:var(--text-light);}
+.subscribe-form button{width:100%;padding:0.82rem;background:var(--maroon);color:var(--gold-light);font-family:'Cinzel',serif;font-size:0.76rem;letter-spacing:0.08em;border:none;cursor:pointer;transition:background 0.2s;}
+.subscribe-form button:hover{background:var(--saffron);color:#fff;}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:0.45rem;}
+.tag{font-size:0.7rem;letter-spacing:0.06em;padding:0.28rem 0.65rem;border:1px solid var(--border);color:var(--text-mid);cursor:pointer;transition:all 0.2s;text-transform:uppercase;}
+.tag:hover{background:var(--maroon);color:var(--gold-light);border-color:var(--maroon);}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media(max-width:1050px){
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+  .about-grid,.donate-grid,.membership-grid,.contact-grid{grid-template-columns:1fr;gap:2.2rem;}
+  .office-bearers{grid-template-columns:1fr;}
+  .events-grid{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .blog-layout{grid-template-columns:1fr;}
+  .featured-post{grid-template-columns:1fr;}
+  .featured-img{min-height:190px;}
+}
+@media(max-width:600px){
+  .events-grid,.footer-grid,.about-facts,.donate-tiers,.form-row,.post-grid{grid-template-columns:1fr;}
+  .stats-bar{flex-direction:column;align-items:center;}
+  .hero-btns{flex-direction:column;}
+  .all-trustees-grid{grid-template-columns:repeat(2,1fr);}
+  .office-bearers{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVBAR (shared across all pages)
+══════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-brand" onclick="showPage('home')">
+    <span class="nav-om">ॐ</span>
+    <div class="nav-name">Arya Vysya Sanathana<br>Dharma Rakshana Samithi</div>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><button class="nav-home-btn" onclick="showPage('home')">🏠 Home</button></li>
+    <li><button onclick="showPage('home','about')">About</button></li>
+    <li><button onclick="showPage('home','objects')">Mission</button></li>
+    <li><button onclick="showPage('home','trustees')">Trustees</button></li>
+    <li><button onclick="showPage('home','events')">Events</button></li>
+    <li><button class="nav-blog-btn" id="navBlogBtn" onclick="showPage('blog')">Blog</button></li>
+    <li><button onclick="showPage('home','contact')">Contact</button></li>
+    <li><button class="nav-live-btn" onclick="openLive()"><span class="live-dot"></span>Live</button></li>
+    <li><button class="nav-donate-btn" onclick="showPage('home','donate')">Donate</button></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <button onclick="showPage('home');closeMenu()">🏠 Home</button>
+  <button onclick="showPage('home','about');closeMenu()">About</button>
+  <button onclick="showPage('home','objects');closeMenu()">Mission</button>
+  <button onclick="showPage('home','trustees');closeMenu()">Trustees</button>
+  <button onclick="showPage('home','events');closeMenu()">Events</button>
+  <button onclick="showPage('blog');closeMenu()" style="color:var(--saffron);font-weight:700;">📝 Blog</button>
+  <button onclick="showPage('home','contact');closeMenu()">Contact</button>
+  <button onclick="openLive();closeMenu()" style="color:#CC0000;">🔴 Watch Live</button>
+  <button class="drawer-donate" onclick="showPage('home','donate');closeMenu()">Donate Now</button>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: HOME
+══════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="mandala-ring"></div>
+    <div class="mandala-ring"></div>
+    <div class="mandala-ring"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">Est. 13th March 2026 · Bengaluru, Karnataka</div>
+    <span class="hero-om">ॐ</span>
+    <h1>Arya Vysya<br><span>Sanathana Dharma</span><br>Rakshana Samithi</h1>
+    <div class="hero-subtitle">Serving Dharma. Serving Humanity.</div>
+    <p>A registered Public Charitable &amp; Religious Trust committed to preserving Sanathana Dharma, uplifting communities, and serving all sections of society through devotion, education, and compassion.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="showPage('home','donate')">Donate Now</button>
+      <button class="btn-secondary" onclick="showPage('home','membership')">Join as Member</button>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar" id="statsBar">
+  <div class="stat"><span class="stat-number">17</span><span class="stat-label">Board Trustees</span></div>
+  <div class="stat"><span class="stat-number">12AB</span><span class="stat-label">IT Registration</span></div>
+  <div class="stat"><span class="stat-number">80G</span><span class="stat-label">Tax Exemption</span></div>
+  <div class="stat"><span class="stat-number">Pan</span><span class="stat-label">India Activities</span></div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-tag reveal">About the Trust</div>
+  <div class="section-title reveal">Rooted in Dharma,<br>Built for the People</div>
+  <div class="section-divider reveal"></div>
+  <p class="section-intro reveal">An irrevocable Public Charitable and Religious Trust established to preserve ancient wisdom, support the needy, and build a community grounded in values of compassion, seva, and devotion.</p>
+  <div class="about-grid">
+    <div>
+      <div class="about-facts">
+        <div class="fact-card reveal rd1"><div class="fact-label">Trust Name</div><div class="fact-value">AVSDRS</div></div>
+        <div class="fact-card reveal rd2"><div class="fact-label">Established</div><div class="fact-value">13 March 2026</div></div>
+        <div class="fact-card reveal rd3"><div class="fact-label">Nature</div><div class="fact-value">Irrevocable Public Trust</div></div>
+        <div class="fact-card reveal rd1"><div class="fact-label">Compliance</div><div class="fact-value">Sec 12AB &amp; 80G</div></div>
+        <div class="fact-card reveal rd2"><div class="fact-label">Office</div><div class="fact-value">K.R. Puram, Bengaluru</div></div>
+        <div class="fact-card reveal rd3"><div class="fact-label">Beneficiaries</div><div class="fact-value">Public at Large</div></div>
+      </div>
+    </div>
+    <div class="reveal" style="display:flex;justify-content:center;align-items:center;">
+      <div class="lotus-container">
+        <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="160" cy="160" r="150" stroke="rgba(200,146,42,0.15)" stroke-width="1"/>
+          <circle cx="160" cy="160" r="130" stroke="rgba(200,146,42,0.1)" stroke-width="1" stroke-dasharray="4 6"/>
+          <ellipse cx="160" cy="100" rx="18" ry="50" fill="rgba(232,98,26,0.7)"/>
+          <ellipse cx="160" cy="100" rx="18" ry="50" fill="rgba(232,98,26,0.7)" transform="rotate(30 160 160)"/>
+          <ellipse cx="160" cy="100" rx="18" ry="50" fill="rgba(232,98,26,0.7)" transform="rotate(60 160 160)"/>
+          <ellipse cx="160" cy="100" rx="18" ry="50" fill="rgba(232,98,26,0.6)" transform="rotate(90 160 160)"/>
+          <ellipse cx="160" cy="100" rx="18" ry="50" fill="rgba(232,98,26,0.6)" transform="rotate(120 160 160)"/>
+          <ellipse cx="160" cy="100" rx="18" ry="50" fill="rgba(232,98,26,0.7)" transform="rotate(150 160 160)"/>
+          <ellipse cx="160" cy="100" rx="18" ry="50" fill="rgba(232,98,26,0.7)" transform="rotate(180 160 160)"/>
+          <ellipse cx="160" cy="100" rx="18" ry="50" fill="rgba(232,98,26,0.6)" transform="rotate(210 160 160)"/>
+          <ellipse cx="160" cy="100" rx="18" ry="50" fill="rgba(232,98,26,0.6)" transform="rotate(240 160 160)"/>
+          <ellipse cx="160" cy="100" rx="18" ry="50" fill="rgba(232,98,26,0.7)" transform="rotate(270 160 160)"/>
+          <ellipse cx="160" cy="100" rx="18" ry="50" fill="rgba(232,98,26,0.7)" transform="rotate(300 160 160)"/>
+          <ellipse cx="160" cy="100" rx="18" ry="50" fill="rgba(232,98,26,0.6)" transform="rotate(330 160 160)"/>
+          <circle cx="160" cy="160" r="45" fill="rgba(200,146,42,0.9)"/>
+          <circle cx="160" cy="160" r="35" fill="rgba(240,192,64,0.95)"/>
+          <text x="160" y="172" text-anchor="middle" font-size="32" fill="#6B1A1A" font-family="serif" font-weight="700">ॐ</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTS -->
+<section class="objects" id="objects">
+  <div class="section-tag reveal">Our Mission</div>
+  <div class="section-title reveal">Objects of the Trust</div>
+  <div class="section-divider reveal"></div>
+  <p class="section-intro reveal">Activities carried out without discrimination of caste, creed, religion, gender, or community.</p>
+  <div class="objects-tabs reveal">
+    <button class="tab-btn active" onclick="switchTab('religious',this)">🛕 Religious Objects</button>
+    <button class="tab-btn" onclick="switchTab('charitable',this)">🤲 Charitable Objects</button>
+  </div>
+  <div class="tab-content active" id="tab-religious">
+    <div class="obj-card reveal"><span class="obj-icon">🔥</span><div class="obj-title">Poojas &amp; Yagnas</div><div class="obj-desc">Conduct Poojas, Yagnas, Homams, Bhajans, Pravachanas, and Gou Sevas for spiritual upliftment.</div></div>
+    <div class="obj-card reveal rd1"><span class="obj-icon">🛕</span><div class="obj-title">Temples &amp; Dharma Kendras</div><div class="obj-desc">Establish and maintain temples, prayer halls, dharma kendras, and spiritual centres.</div></div>
+    <div class="obj-card reveal rd2"><span class="obj-icon">📿</span><div class="obj-title">Vedic Education</div><div class="obj-desc">Promote study of Vedas, Upanishads, Bhagavad Gita, Ramayana, Mahabharata.</div></div>
+    <div class="obj-card reveal rd3"><span class="obj-icon">🎊</span><div class="obj-title">Hindu Festivals</div><div class="obj-desc">Celebrate Rama Navami, Navaratri, Deepavali, Vasavi Jayanti, and all Hindu festivals.</div></div>
+    <div class="obj-card reveal"><span class="obj-icon">🧘</span><div class="obj-title">Spiritual Camps</div><div class="obj-desc">Organize spiritual camps, youth dharma awareness programs, and cultural activities.</div></div>
+    <div class="obj-card reveal rd1"><span class="obj-icon">🌿</span><div class="obj-title">Health &amp; Welfare</div><div class="obj-desc">Promote health and family welfare; guide those in need to a renewed life.</div></div>
+  </div>
+  <div class="tab-content" id="tab-charitable">
+    <div class="obj-card reveal"><span class="obj-icon">🍚</span><div class="obj-title">Annadana</div><div class="obj-desc">Free food distribution programs serving all who are in need.</div></div>
+    <div class="obj-card reveal rd1"><span class="obj-icon">🎓</span><div class="obj-title">Scholarships</div><div class="obj-desc">Educational assistance and scholarships for economically weaker students.</div></div>
+    <div class="obj-card reveal rd2"><span class="obj-icon">🏥</span><div class="obj-title">Medical Camps</div><div class="obj-desc">Medical camps and health awareness programs for underserved communities.</div></div>
+    <div class="obj-card reveal rd3"><span class="obj-icon">🌊</span><div class="obj-title">Disaster Relief</div><div class="obj-desc">Relief activities during natural calamities with immediate aid and rehabilitation.</div></div>
+    <div class="obj-card reveal"><span class="obj-icon">🐄</span><div class="obj-title">Gau Seva</div><div class="obj-desc">Preservation of cows and support to Gaushalas as part of our dharmic duty.</div></div>
+    <div class="obj-card reveal rd1"><span class="obj-icon">🎶</span><div class="obj-title">Indian Culture &amp; Arts</div><div class="obj-desc">Promotion of Indian culture, arts, music, classical dance, and traditional knowledge.</div></div>
+  </div>
+</section>
+
+<!-- TRUSTEES -->
+<section class="trustees" id="trustees">
+  <div class="section-tag reveal">Leadership</div>
+  <div class="section-title reveal">Board of Trustees</div>
+  <div class="section-divider reveal"></div>
+  <p class="section-intro reveal">Governed by a Board of 17 dedicated Trustees. Three Office Bearers oversee day-to-day administration.</p>
+  <!-- Office Bearers -->
+  <div style="margin-top:2.2rem;">
+    <div class="all-trustees-label reveal">Office Bearers</div>
+    <div class="office-bearers">
+      <div class="bearer-card reveal">
+        <div class="bearer-photo" style="background:linear-gradient(135deg,#8B3A3A,#5A1A1A);">
+          <img src="" alt="" onerror="this.style.display='none'"><span>M</span>
+        </div>
+        <div class="bearer-role">President</div>
+        <div class="bearer-name">Sri. Manikanta. N</div>
+        <div class="upload-hint">[ Replace with photo ]</div>
+      </div>
+      <div class="bearer-card reveal rd1">
+        <div class="bearer-photo" style="background:linear-gradient(135deg,#7A4A1A,#4A2A0A);">
+          <img src="" alt="" onerror="this.style.display='none'"><span>V</span>
+        </div>
+        <div class="bearer-role">Secretary</div>
+        <div class="bearer-name">Sri. P. Vikram</div>
+        <div class="upload-hint">[ Replace with photo ]</div>
+      </div>
+      <div class="bearer-card reveal rd2">
+        <div class="bearer-photo" style="background:linear-gradient(135deg,#3A5A3A,#1A3A1A);">
+          <img src="" alt="" onerror="this.style.display='none'"><span>S</span>
+        </div>
+        <div class="bearer-role">Treasurer</div>
+        <div class="bearer-name">Sri. S. Sunil Kumar</div>
+        <div class="upload-hint">[ Replace with photo ]</div>
+      </div>
+    </div>
+  </div>
+  <!-- All 17 -->
+  <div style="margin-top:2.5rem;">
+    <div class="all-trustees-label reveal">All Trustees</div>
+    <div class="all-trustees-grid">
+      <!-- cards: initials + colour + name + role + photo slot -->
+      <div class="trustee-card reveal"><div class="trustee-photo tc1"><img src="" alt="" onerror="this.style.display='none'">M</div><div class="trustee-card-name">Sri. Manikanta. N</div><div class="trustee-card-role">Managing Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal rd1"><div class="trustee-photo tc2"><img src="" alt="" onerror="this.style.display='none'">S</div><div class="trustee-card-name">Sri. S. Sunil Kumar</div><div class="trustee-card-role">Managing Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal rd2"><div class="trustee-photo tc3"><img src="" alt="" onerror="this.style.display='none'">V</div><div class="trustee-card-name">Sri. P. Vikram</div><div class="trustee-card-role">Managing Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal rd3"><div class="trustee-photo tc4"><img src="" alt="" onerror="this.style.display='none'">S</div><div class="trustee-card-name">Sri. Sunil Kumar. K.N</div><div class="trustee-card-role">First Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal"><div class="trustee-photo tc5"><img src="" alt="" onerror="this.style.display='none'">A</div><div class="trustee-card-name">Sri. Ananthram. C.R</div><div class="trustee-card-role">First Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal rd1"><div class="trustee-photo tc6"><img src="" alt="" onerror="this.style.display='none'">K</div><div class="trustee-card-name">Sri. Kishan. P.R</div><div class="trustee-card-role">First Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal rd2"><div class="trustee-photo tc7"><img src="" alt="" onerror="this.style.display='none'">N</div><div class="trustee-card-name">Sri. Naveen. R</div><div class="trustee-card-role">First Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal rd3"><div class="trustee-photo tc8"><img src="" alt="" onerror="this.style.display='none'">N</div><div class="trustee-card-name">Sri. Naveen Kumar. B.A</div><div class="trustee-card-role">First Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal"><div class="trustee-photo tc1"><img src="" alt="" onerror="this.style.display='none'">K</div><div class="trustee-card-name">Sri. Karthik. R</div><div class="trustee-card-role">First Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal rd1"><div class="trustee-photo tc2"><img src="" alt="" onerror="this.style.display='none'">M</div><div class="trustee-card-name">Sri. Mahesh Krishnamurthy</div><div class="trustee-card-role">First Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal rd2"><div class="trustee-photo tc3"><img src="" alt="" onerror="this.style.display='none'">A</div><div class="trustee-card-name">Sri. Amaranath. V</div><div class="trustee-card-role">First Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal rd3"><div class="trustee-photo tc4"><img src="" alt="" onerror="this.style.display='none'">D</div><div class="trustee-card-name">Sri. G. Dhananjaya</div><div class="trustee-card-role">First Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal"><div class="trustee-photo tc5"><img src="" alt="" onerror="this.style.display='none'">S</div><div class="trustee-card-name">Sri. S. Susheel Kumar</div><div class="trustee-card-role">First Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal rd1"><div class="trustee-photo tc6"><img src="" alt="" onerror="this.style.display='none'">A</div><div class="trustee-card-name">Sri. Abhijith. R.G</div><div class="trustee-card-role">First Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal rd2"><div class="trustee-photo tc7"><img src="" alt="" onerror="this.style.display='none'">A</div><div class="trustee-card-name">Sri. B.V. Arun</div><div class="trustee-card-role">First Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal rd3"><div class="trustee-photo tc8"><img src="" alt="" onerror="this.style.display='none'">R</div><div class="trustee-card-name">Sri. N. Rajesh</div><div class="trustee-card-role">First Trustee</div><div class="upload-hint">[photo]</div></div>
+      <div class="trustee-card reveal"><div class="trustee-photo tc1"><img src="" alt="" onerror="this.style.display='none'">A</div><div class="trustee-card-name">Sri. Adeesh Krishnaiah Setty</div><div class="trustee-card-role">First Trustee</div><div class="upload-hint">[photo]</div></div>
+    </div>
+  </div>
+  <div class="trustee-note reveal">All 17 Trustees serving without remuneration · Transparent governance under Indian Trust Law</div>
+</section>
+
+<!-- DONATE -->
+<section class="donate" id="donate">
+  <div class="section-tag reveal">Support Us</div>
+  <div class="section-title reveal">Make a Donation</div>
+  <div class="section-divider reveal"></div>
+  <p class="section-intro reveal">Your contribution fuels Annadana, scholarships, temple upkeep, and community welfare.</p>
+  <div class="donate-grid">
+    <div class="donate-info reveal">
+      <p>The Trust applies not less than 85% of all income toward its charitable and religious objects in strict compliance with the Income Tax Act, 1961.</p>
+      <div class="tax-badge"><div class="tax-badge-title">✓ Tax Deductible Donations</div><p>Registered under Section 12AB and approved under Section 80G — your donations qualify for income tax deduction.</p></div>
+      <p>Bank account details will be published upon account opening. For immediate donations, please contact us directly.</p>
+      <button class="btn-primary" onclick="showPage('home','contact')" style="margin-top:1rem;">Contact for Bank Details</button>
+    </div>
+    <div class="reveal rd1">
+      <div class="donate-tiers">
+        <div class="tier selected" onclick="selectTier(this)"><span class="tier-amount">₹500</span><span class="tier-label">Supporter</span></div>
+        <div class="tier" onclick="selectTier(this)"><span class="tier-amount">₹1,000</span><span class="tier-label">Devotee</span></div>
+        <div class="tier" onclick="selectTier(this)"><span class="tier-amount">₹5,000</span><span class="tier-label">Patron</span></div>
+        <div class="tier" onclick="selectTier(this)"><span class="tier-amount">Custom</span><span class="tier-label">Your Amount</span></div>
+      </div>
+      <div class="donate-form">
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email Address">
+        <input type="tel" placeholder="Mobile Number">
+        <input type="text" placeholder="PAN Number (for 80G certificate)" id="pan-field" style="display:none;">
+        <button class="btn-primary" style="width:100%;padding:1rem;" onclick="handleDonate()">Proceed to Donate →</button>
+        <p style="font-size:0.72rem;color:var(--text-light);margin-top:0.65rem;text-align:center;">Payment gateway integration coming soon. Contact us directly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section class="membership" id="membership">
+  <div class="section-tag reveal">Join Us</div>
+  <div class="section-title reveal">Become a Member</div>
+  <div class="section-divider reveal"></div>
+  <p class="section-intro reveal">Open to all individuals who support our objects and wish to participate in spiritual, charitable, and cultural activities.</p>
+  <div class="membership-grid">
+    <div>
+      <ul class="membership-benefits reveal">
+        <li><span class="benefit-icon">🙏</span>Participate in all spiritual events — Poojas, Yagnas, Bhajans, and Pravachanas</li>
+        <li><span class="benefit-icon">🤝</span>Join charitable drives — Annadana, medical camps, and scholarship programs</li>
+        <li><span class="benefit-icon">🎭</span>Engage in cultural activities — music, classical arts, and traditional programs</li>
+        <li><span class="benefit-icon">📣</span>Receive updates about upcoming events and programs</li>
+        <li><span class="benefit-icon">🌸</span>Be part of a growing community rooted in dharmic values</li>
+        <li><span class="benefit-icon">📜</span>Voluntary contributions toward Trust objects are welcome but not mandatory</li>
+      </ul>
+      <p style="font-size:0.8rem;color:var(--text-light);margin-top:1.3rem;font-style:italic;">Note: Members do not have voting rights or administrative authority.</p>
+    </div>
+    <div class="membership-form reveal rd1">
+      <h3>Apply for Membership</h3>
+      <div class="form-row"><input type="text" placeholder="First Name"><input type="text" placeholder="Last Name"></div>
+      <input type="email" placeholder="Email Address">
+      <input type="tel" placeholder="Mobile Number">
+      <input type="text" placeholder="City / Area">
+      <textarea placeholder="Tell us briefly why you'd like to join..."></textarea>
+      <button class="btn-primary" style="width:100%;" onclick="handleMembership()">Submit Application →</button>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="events" id="events">
+  <div class="section-tag reveal">Upcoming</div>
+  <div class="section-title reveal">Programs &amp; Events</div>
+  <div class="section-divider reveal"></div>
+  <p class="section-intro reveal">Stay connected with our calendar of devotional, charitable, and cultural events.</p>
+  <div class="events-grid">
+    <div class="event-card reveal">
+      <div class="event-header"><div class="event-date-block"><span class="event-day">TBD</span><span class="event-month">April 2026</span></div><div class="event-icon-big">🔥</div></div>
+      <div class="event-body"><div class="event-type">Religious</div><div class="event-name">Inaugural Pooja &amp; Homam</div><div class="event-desc">Inaugural Pooja and Homam to bless the Trust's commencement of activities.</div><button class="event-link" onclick="showPage('home','contact')">Register Interest →</button></div>
+    </div>
+    <div class="event-card reveal rd1">
+      <div class="event-header"><div class="event-date-block"><span class="event-day">TBD</span><span class="event-month">May 2026</span></div><div class="event-icon-big">🍚</div></div>
+      <div class="event-body"><div class="event-type">Charitable</div><div class="event-name">Annadana Drive</div><div class="event-desc">Free food distribution for the underprivileged around K.R. Puram, Bengaluru.</div><button class="event-link" onclick="showPage('home','contact')">Volunteer →</button></div>
+    </div>
+    <div class="event-card reveal rd2">
+      <div class="event-header"><div class="event-date-block"><span class="event-day">TBD</span><span class="event-month">June 2026</span></div><div class="event-icon-big">🏥</div></div>
+      <div class="event-body"><div class="event-type">Health</div><div class="event-name">Free Medical Camp</div><div class="event-desc">Medical check-up and health awareness camp for underserved families.</div><button class="event-link" onclick="showPage('home','contact')">Learn More →</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-tag reveal">Get in Touch</div>
+  <div class="section-title reveal">Contact Us</div>
+  <div class="section-divider reveal"></div>
+  <div class="contact-grid">
+    <div>
+      <div class="contact-info-item reveal"><div class="contact-icon">📍</div><div><div class="contact-label">Office Address</div><div class="contact-value">Sri Kamadhenu Traders, #111, 1st Floor,<br>Near Karnataka Bank ATM, K.R. Puram,<br>Bengaluru – 560 036, Karnataka</div></div></div>
+      <div class="contact-info-item reveal rd1"><div class="contact-icon">📞</div><div><div class="contact-label">President — Sri. Manikanta. N</div><div class="contact-value">+91 9141008006</div></div></div>
+      <div class="contact-info-item reveal rd2"><div class="contact-icon">⚖️</div><div><div class="contact-label">Legal Status</div><div class="contact-value">Public Charitable &amp; Religious Trust<br>Sec 12AB &amp; 80G · Income Tax Act 1961</div></div></div>
+      <div class="contact-info-item reveal rd3"><div class="contact-icon">🕐</div><div><div class="contact-label">Office Hours</div><div class="contact-value">Monday – Saturday · 10:00 AM – 6:00 PM</div></div></div>
+    </div>
+    <div class="contact-form reveal rd1">
+      <h3>Send a Message</h3>
+      <div class="form-row"><input type="text" placeholder="Your Name"><input type="tel" placeholder="Mobile"></div>
+      <input type="email" placeholder="Email Address">
+      <input type="text" placeholder="Subject">
+      <textarea placeholder="Your message..."></textarea>
+      <button class="btn-primary" style="width:100%;" onclick="handleContact()">Send Message →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-om">ॐ</div>
+      <h3>Arya Vysya Sanathana<br>Dharma Rakshana Samithi</h3>
+      <p>A registered Public Charitable &amp; Religious Trust dedicated to preserving Sanathana Dharma and serving the public without discrimination.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><button onclick="showPage('home','about')">About the Trust</button></li>
+        <li><button onclick="showPage('home','objects')">Our Mission</button></li>
+        <li><button onclick="showPage('home','trustees')">Board of Trustees</button></li>
+        <li><button onclick="showPage('home','events')">Events</button></li>
+        <li><button onclick="showPage('blog')">Blog</button></li>
+        <li><button onclick="showPage('home','donate')">Donate</button></li>
+        <li><button onclick="showPage('home','membership')">Membership</button></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Activities</h4>
+      <ul>
+        <li><button onclick="showPage('home','objects')">Poojas &amp; Homams</button></li>
+        <li><button onclick="showPage('home','objects')">Annadana</button></li>
+        <li><button onclick="showPage('home','objects')">Scholarships</button></li>
+        <li><button onclick="showPage('home','objects')">Medical Camps</button></li>
+        <li><button onclick="showPage('home','objects')">Gau Seva</button></li>
+        <li><button onclick="showPage('home','objects')">Cultural Programs</button></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">K.R. Puram, Bengaluru – 560036</a></li>
+        <li><a href="tel:9141008006">+91 9141008006</a></li>
+        <li><a href="#">President: Sri. Manikanta.N</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Arya Vysya Sanathana Dharma Rakshana Samithi. All rights reserved.</p>
+    <div class="footer-legal">
+      <span>Section 12AB Registered</span>
+      <span>Section 80G Approved</span>
+      <span>Public Charitable Trust</span>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /page-home -->
+
+
+<!-- ══════════════════════════════════════════
+     PAGE: BLOG
+══════════════════════════════════════════ -->
+<div id="page-blog" class="page blog-page">
+
+<!-- Blog Hero -->
+<div class="blog-hero">
+  <span class="blog-hero-tag">Insights · Announcements · Dharma</span>
+  <h1>Our Blog</h1>
+  <p>Spiritual reflections, event updates, and stories of seva from our community.</p>
+</div>
+
+<!-- Filter Bar -->
+<div class="filter-bar">
+  <span class="filter-label">Filter:</span>
+  <button class="filter-btn active" onclick="filterPosts('all',this)">All</button>
+  <button class="filter-btn" onclick="filterPosts('religious',this)">🛕 Religious</button>
+  <button class="filter-btn" onclick="filterPosts('charitable',this)">🤲 Charitable</button>
+  <button class="filter-btn" onclick="filterPosts('cultural',this)">🎶 Cultural</button>
+  <button class="filter-btn" onclick="filterPosts('announcement',this)">📣 Announcements</button>
+</div>
+
+<!-- Blog Layout -->
+<div class="blog-layout">
+  <main>
+    <!-- POST LIST VIEW -->
+    <div id="postListView">
+      <!-- Featured -->
+      <div class="featured-post" data-cat="religious" onclick="openPost('post1')">
+        <div class="featured-img"><span class="featured-img-label">⭐ Featured</span><span class="featured-img-icon">🔥</span></div>
+        <div class="featured-body">
+          <div class="post-category">🛕 Religious</div>
+          <div class="post-title">The Sacred Significance of Vasavi Jayanti</div>
+          <div class="post-excerpt">Vasavi Jayanti marks the divine sacrifice of Kanyaka Parameswari — a timeless symbol of courage, integrity, and dharmic devotion. Our community gathers to honour her legacy with Poojas, Pravachanas, and cultural programs...</div>
+          <div class="post-meta"><span>📅 March 13, 2026</span><span>✍️ Trust Editorial</span><span>⏱ 5 min read</span></div>
+          <button class="read-more">Read Full Article →</button>
+        </div>
+      </div>
+      <!-- Grid -->
+      <div class="post-grid" id="postGrid">
+        <div class="post-card" data-cat="charitable" onclick="openPost('post2')"><div class="post-card-img cat-charitable"><span class="post-card-img-icon">🍚</span></div><div class="post-card-body"><div class="post-category">🤲 Charitable</div><div class="post-title">Annadana — Why Free Food Distribution is the Highest Form of Seva</div><div class="post-excerpt">In Sanathana Dharma, Annadana — the gift of food — is considered the noblest of all charities...</div><div class="post-meta"><span>📅 March 10, 2026</span><span>⏱ 4 min read</span></div></div></div>
+        <div class="post-card" data-cat="announcement" onclick="openPost('post3')"><div class="post-card-img cat-announcement"><span class="post-card-img-icon">📣</span></div><div class="post-card-body"><div class="post-category">📣 Announcement</div><div class="post-title">Trust Registration Complete — AVSDRS Officially Established</div><div class="post-excerpt">We are delighted to announce that AVSDRS has been formally registered as a Public Charitable and Religious Trust on 13th March 2026...</div><div class="post-meta"><span>📅 March 13, 2026</span><span>⏱ 3 min read</span></div></div></div>
+        <div class="post-card" data-cat="cultural" onclick="openPost('post4')"><div class="post-card-img cat-cultural"><span class="post-card-img-icon">🎶</span></div><div class="post-card-body"><div class="post-category">🎶 Cultural</div><div class="post-title">Preserving Classical Arts: Our Commitment to Indian Heritage</div><div class="post-excerpt">From Bharatanatyam to Carnatic music, Indian classical arts are a living expression of our spiritual heritage...</div><div class="post-meta"><span>📅 March 8, 2026</span><span>⏱ 4 min read</span></div></div></div>
+        <div class="post-card" data-cat="religious" onclick="openPost('post5')"><div class="post-card-img cat-religious"><span class="post-card-img-icon">📿</span></div><div class="post-card-body"><div class="post-category">🛕 Religious</div><div class="post-title">Understanding the Bhagavad Gita — Timeless Wisdom for Modern Life</div><div class="post-excerpt">The Bhagavad Gita is not merely a religious scripture — it is a practical guide to living a purposeful life...</div><div class="post-meta"><span>📅 March 5, 2026</span><span>⏱ 6 min read</span></div></div></div>
+        <div class="post-card" data-cat="charitable" onclick="openPost('post6')"><div class="post-card-img cat-charitable"><span class="post-card-img-icon">🏥</span></div><div class="post-card-body"><div class="post-category">🤲 Charitable</div><div class="post-title">Medical Camps: Bringing Healthcare to Those Who Need It Most</div><div class="post-excerpt">Our free medical camps bring doctor consultations, screenings, and medicines to families who cannot afford regular care...</div><div class="post-meta"><span>📅 March 1, 2026</span><span>⏱ 3 min read</span></div></div></div>
+        <div class="post-card" data-cat="religious" onclick="openPost('post7')"><div class="post-card-img cat-religious"><span class="post-card-img-icon">🐄</span></div><div class="post-card-body"><div class="post-category">🛕 Religious</div><div class="post-title">Gau Mata — The Sacred Cow and the Dharma of Cow Protection</div><div class="post-excerpt">In Hindu Dharma, the cow is revered as a symbol of abundance, compassion, and non-violence...</div><div class="post-meta"><span>📅 Feb 25, 2026</span><span>⏱ 5 min read</span></div></div></div>
+      </div>
+    </div><!-- /postListView -->
+
+    <!-- FULL POSTS -->
+    <div class="full-post" id="full-post1">
+      <button class="full-post-back" onclick="closePost()">← Back to Blog</button>
+      <div class="full-post-header"><div class="post-category">🛕 Religious</div><h1>The Sacred Significance of Vasavi Jayanti</h1><div class="post-meta"><span>📅 March 13, 2026</span><span>✍️ Trust Editorial</span><span>⏱ 5 min read</span></div></div>
+      <div class="full-post-banner">🔥</div>
+      <div class="full-post-content">
+        <p>Vasavi Jayanti is one of the most significant observances for the Arya Vysya community — a day that commemorates the extraordinary life and sacrifice of Kanyaka Parameswari, also known as Vasavi Devi.</p>
+        <h2>Who Was Vasavi Devi?</h2>
+        <p>Vasavi Kanyaka Parameswari was the daughter of a wealthy merchant in the Arya Vysya community. Known for her extraordinary beauty, intelligence, and devotion, she became the centre of a dharmic conflict when a powerful king sought to marry her against the wishes of her family and community.</p>
+        <blockquote>"Rather than compromise the honour of her community and her dharma, Vasavi Devi chose to enter the sacred fire — an act of supreme sacrifice that earned her immortality in the hearts of her people."</blockquote>
+        <h2>How We Observe This Day</h2>
+        <p>At AVSDRS, Vasavi Jayanti is observed with special Poojas at the Vasavi Kanyakaparameshwari Temple in K.R. Puram, followed by Pravachanas, Bhajans, and community gatherings.</p>
+        <h2>Join Us</h2>
+        <p>We warmly invite you to join our observance of Vasavi Jayanti. If you would like to volunteer or contribute, please reach out to us.</p>
+      </div>
+    </div>
+    <div class="full-post" id="full-post2">
+      <button class="full-post-back" onclick="closePost()">← Back to Blog</button>
+      <div class="full-post-header"><div class="post-category">🤲 Charitable</div><h1>Annadana — Why Free Food Distribution is the Highest Form of Seva</h1><div class="post-meta"><span>📅 March 10, 2026</span><span>⏱ 4 min read</span></div></div>
+      <div class="full-post-banner">🍚</div>
+      <div class="full-post-content">
+        <p>In the Sanathana Dharma tradition, there is a saying: "Annadaata Sukhibhava" — may the giver of food be blessed. Annadana has been considered the highest form of charitable service for thousands of years.</p>
+        <h2>The Philosophy Behind Annadana</h2>
+        <p>Food is not merely nourishment for the body — in our tradition, it is a form of Brahman itself. When we offer food to another, we are not simply feeding a person; we are serving the divine within them.</p>
+        <blockquote>"Anna daanam param daanam — among all forms of charity, the gift of food is supreme."</blockquote>
+        <h2>Our Annadana Programs</h2>
+        <p>AVSDRS is committed to running regular Annadana drives in and around K.R. Puram, Bengaluru. We welcome volunteers and donors to join us in this sacred mission.</p>
+      </div>
+    </div>
+    <div class="full-post" id="full-post3">
+      <button class="full-post-back" onclick="closePost()">← Back to Blog</button>
+      <div class="full-post-header"><div class="post-category">📣 Announcement</div><h1>Trust Registration Complete — AVSDRS Officially Established</h1><div class="post-meta"><span>📅 March 13, 2026</span><span>⏱ 3 min read</span></div></div>
+      <div class="full-post-banner">📣</div>
+      <div class="full-post-content">
+        <p>We are delighted to announce that Arya Vysya Sanathana Dharma Rakshana Samithi has been formally established as a Public Charitable and Religious Trust on 13th March 2026 in Bengaluru, Karnataka.</p>
+        <h2>A New Chapter Begins</h2>
+        <p>The Trust has been established with a Board of 17 founding Trustees. Sri. Manikanta.N has been elected as President, Sri. P. Vikram as Secretary, and Sri. S. Sunil Kumar as Treasurer.</p>
+        <h2>What Comes Next</h2>
+        <p>We will be filing for registration under Section 12AB and approval under Section 80G, organizing our inaugural Pooja, launching our Annadana program, and opening membership applications to the public.</p>
+      </div>
+    </div>
+    <div class="full-post" id="full-post4">
+      <button class="full-post-back" onclick="closePost()">← Back to Blog</button>
+      <div class="full-post-header"><div class="post-category">🎶 Cultural</div><h1>Preserving Classical Arts: Our Commitment to Indian Heritage</h1><div class="post-meta"><span>📅 March 8, 2026</span><span>⏱ 4 min read</span></div></div>
+      <div class="full-post-banner">🎶</div>
+      <div class="full-post-content">
+        <p>India's classical arts — Bharatanatyam, Kuchipudi, Carnatic music, Harikatha — are not entertainment. They are a living bridge between the human and the divine.</p>
+        <h2>Why We Must Preserve Them</h2>
+        <p>In an era of rapid cultural change, many classical art forms are under threat. AVSDRS intends to bridge the gap by creating platforms for these arts to reach new audiences.</p>
+        <h2>Our Programs</h2>
+        <p>We plan to organize annual cultural festivals, support young artists through scholarships and performance opportunities. If you are an artist or patron of the arts, we invite you to collaborate with us.</p>
+      </div>
+    </div>
+    <div class="full-post" id="full-post5">
+      <button class="full-post-back" onclick="closePost()">← Back to Blog</button>
+      <div class="full-post-header"><div class="post-category">🛕 Religious</div><h1>Understanding the Bhagavad Gita — Timeless Wisdom for Modern Life</h1><div class="post-meta"><span>📅 March 5, 2026</span><span>⏱ 6 min read</span></div></div>
+      <div class="full-post-banner">📿</div>
+      <div class="full-post-content">
+        <p>The Bhagavad Gita, delivered by Lord Krishna on the battlefield of Kurukshetra, is one of humanity's most profound philosophical texts offering guidance as relevant today as it was five thousand years ago.</p>
+        <h2>The Gita's Core Teaching</h2>
+        <p>At its heart, the Bhagavad Gita teaches us about dharma — our righteous duty — and how to fulfil it without attachment to results.</p>
+        <blockquote>"Karmanye vadhikaraste ma phaleshu kadachana — you have the right to perform your duty, but not to the fruits of your actions."</blockquote>
+        <h2>Our Gita Study Programs</h2>
+        <p>AVSDRS organises regular Bhagavad Gita pravachanas and study circles where members of all backgrounds can explore these teachings together.</p>
+      </div>
+    </div>
+    <div class="full-post" id="full-post6">
+      <button class="full-post-back" onclick="closePost()">← Back to Blog</button>
+      <div class="full-post-header"><div class="post-category">🤲 Charitable</div><h1>Medical Camps: Bringing Healthcare to Those Who Need It Most</h1><div class="post-meta"><span>📅 March 1, 2026</span><span>⏱ 3 min read</span></div></div>
+      <div class="full-post-banner">🏥</div>
+      <div class="full-post-content">
+        <p>Access to quality healthcare remains a challenge for many families. Our free medical camps aim to bridge this gap by bringing basic healthcare services directly to the community.</p>
+        <h2>What We Offer</h2>
+        <p>Our camps provide general physician consultations, blood pressure and blood sugar screenings, basic medicines, and health education.</p>
+        <h2>Get Involved</h2>
+        <p>If you are a healthcare professional who would like to volunteer, or if you would like to donate medicines or medical equipment, we warmly welcome your contribution.</p>
+      </div>
+    </div>
+    <div class="full-post" id="full-post7">
+      <button class="full-post-back" onclick="closePost()">← Back to Blog</button>
+      <div class="full-post-header"><div class="post-category">🛕 Religious</div><h1>Gau Mata — The Sacred Cow and the Dharma of Cow Protection</h1><div class="post-meta"><span>📅 Feb 25, 2026</span><span>⏱ 5 min read</span></div></div>
+      <div class="full-post-banner">🐄</div>
+      <div class="full-post-content">
+        <p>In Sanathana Dharma, the cow — Gau Mata — occupies a unique and sacred position. She is a symbol of abundance, compassion, and the earth's nurturing power.</p>
+        <h2>Why Gau Seva Matters</h2>
+        <p>Protecting and serving cows is considered one of the highest duties in our tradition.</p>
+        <blockquote>"Gavo vishwasya matarah — the cow is the mother of the universe."</blockquote>
+        <h2>AVSDRS and Gau Seva</h2>
+        <p>Our Trust supports Gaushalas in and around Bengaluru through financial contributions and volunteer programs. We also organise Gau Puja events and awareness programs.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-widget">
+      <h3>Recent Posts</h3>
+      <div class="recent-post-item" onclick="openPost('post1')"><div class="rp-icon">🔥</div><div><div class="rp-title">Vasavi Jayanti — Significance</div><div class="rp-date">March 13, 2026</div></div></div>
+      <div class="recent-post-item" onclick="openPost('post3')"><div class="rp-icon">📣</div><div><div class="rp-title">AVSDRS Officially Established</div><div class="rp-date">March 13, 2026</div></div></div>
+      <div class="recent-post-item" onclick="openPost('post2')"><div class="rp-icon">🍚</div><div><div class="rp-title">Annadana — Highest Form of Seva</div><div class="rp-date">March 10, 2026</div></div></div>
+      <div class="recent-post-item" onclick="openPost('post5')"><div class="rp-icon">📿</div><div><div class="rp-title">Understanding the Bhagavad Gita</div><div class="rp-date">March 5, 2026</div></div></div>
+    </div>
+    <div class="sidebar-widget">
+      <h3>Categories</h3>
+      <ul class="category-list">
+        <li><a onclick="filterPosts('religious',null)">🛕 Religious</a><span class="cat-count">3</span></li>
+        <li><a onclick="filterPosts('charitable',null)">🤲 Charitable</a><span class="cat-count">2</span></li>
+        <li><a onclick="filterPosts('cultural',null)">🎶 Cultural</a><span class="cat-count">1</span></li>
+        <li><a onclick="filterPosts('announcement',null)">📣 Announcements</a><span class="cat-count">1</span></li>
+      </ul>
+    </div>
+    <div class="sidebar-widget">
+      <h3>Subscribe for Updates</h3>
+      <p style="font-size:0.8rem;color:var(--text-mid);margin-bottom:0.9rem;line-height:1.6;">Get notified of new posts, events, and programs.</p>
+      <div class="subscribe-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Email Address">
+        <input type="tel" placeholder="Mobile (optional)">
+        <button onclick="handleSubscribe()">Subscribe →</button>
+      </div>
+    </div>
+    <div class="sidebar-widget">
+      <h3>Tags</h3>
+      <div class="tag-cloud">
+        <span class="tag">Dharma</span><span class="tag">Seva</span><span class="tag">Pooja</span><span class="tag">Vasavi</span><span class="tag">Gita</span><span class="tag">Annadana</span><span class="tag">Health</span><span class="tag">Culture</span><span class="tag">Education</span><span class="tag">Gau Seva</span><span class="tag">Yagna</span><span class="tag">K.R. Puram</span>
+      </div>
+    </div>
+    <div class="sidebar-widget" style="background:var(--maroon-deep);border-color:rgba(200,146,42,0.3);text-align:center;">
+      <div style="font-size:2.3rem;margin-bottom:0.65rem;">🔴</div>
+      <h3 style="color:var(--gold-light);border-bottom-color:rgba(200,146,42,0.2);">Watch Us Live</h3>
+      <p style="font-size:0.8rem;color:rgba(253,246,236,0.55);margin-bottom:0.9rem;line-height:1.6;">Join our live Poojas &amp; Pravachanas on YouTube.</p>
+      <button onclick="openLive()" style="width:100%;padding:0.82rem;background:#FF0000;color:#fff;font-family:'Cinzel',serif;font-size:0.76rem;letter-spacing:0.08em;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:0.5rem;" onmouseover="this.style.background='#CC0000'" onmouseout="this.style.background='#FF0000'"><span class="live-dot"></span> Watch Live Now</button>
+    </div>
+  </aside>
+</div><!-- /blog-layout -->
+
+<!-- Blog Footer -->
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 Arya Vysya Sanathana Dharma Rakshana Samithi. All rights reserved.</p>
+    <div class="footer-legal"><span>Section 12AB Registered</span><span>Section 80G Approved</span><span>Public Charitable Trust</span></div>
+  </div>
+</footer>
+
+</div><!-- /page-blog -->
+
+
+<!-- ══════════════════════════════════════════
+     LIVE STREAM MODAL (global)
+══════════════════════════════════════════ -->
+<div class="live-modal-overlay" id="liveModal">
+  <div class="live-modal">
+    <button class="live-modal-close" onclick="closeLive()">✕</button>
+    <div style="font-size:2.8rem;">🔴</div>
+    <h2>Watch Live</h2>
+    <p>Join our live Poojas, Pravachanas, and spiritual events. Click below to watch on YouTube Live.</p>
+    <a href="https://www.youtube.com/@AVSDRS" target="_blank" class="live-platform-btn">
+      <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      Watch on YouTube Live
+    </a>
+    <p class="live-schedule-note">Live streams are announced before events. Subscribe to our channel to be notified.</p>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════ -->
+<script>
+/* ─── PAGE SWITCHER ─── */
+function showPage(pageId, scrollTo) {
+  // hide all pages
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  // show target
+  const page = document.getElementById('page-' + pageId);
+  if (page) page.classList.add('active');
+  // update nav active state
+  document.getElementById('navBlogBtn').classList.toggle('nav-active', pageId === 'blog');
+  // scroll to top first
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  // if a section anchor is given, scroll after paint
+  if (scrollTo) {
+    setTimeout(() => {
+      const el = document.getElementById(scrollTo);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 60);
+  }
+  // re-run reveal for newly visible page
+  document.querySelectorAll('.page.active .reveal').forEach(el => {
+    if (!el.classList.contains('visible')) revealObserver.observe(el);
+  });
+  // re-run stats for home page
+  if (pageId === 'home') {
+    document.querySelectorAll('.stat').forEach((s, i) =>
+      setTimeout(() => s.classList.add('visible'), i * 120 + 200)
+    );
+  }
+}
+
+/* ─── HAMBURGER ─── */
+function toggleMenu() {
+  document.getElementById('navDrawer').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('navDrawer').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+window.addEventListener('scroll', closeMenu);
+
+/* ─── NAV SHADOW ─── */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+
+/* ─── REVEAL ON SCROLL ─── */
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -45px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ─── STATS (home load) ─── */
+const statsObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting)
+      document.querySelectorAll('.stat').forEach((s, i) =>
+        setTimeout(() => s.classList.add('visible'), i * 120));
+  });
+}, { threshold: 0.5 });
+const statsEl = document.getElementById('statsBar');
+if (statsEl) statsObserver.observe(statsEl);
+
+/* ─── MISSION TABS ─── */
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+}
+
+/* ─── DONATE TIER ─── */
+function selectTier(el) {
+  document.querySelectorAll('.tier').forEach(t => t.classList.remove('selected'));
+  el.classList.add('selected');
+  const pf = document.getElementById('pan-field');
+  pf.style.display = el.querySelector('.tier-amount').textContent !== '₹500' ? 'block' : 'none';
+}
+
+/* ─── LIVE MODAL ─── */
+function openLive(e) {
+  if (e) e.preventDefault();
+  document.getElementById('liveModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLive() {
+  document.getElementById('liveModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('liveModal').addEventListener('click', function(e) {
+  if (e.target === this) closeLive();
+});
+
+/* ─── BLOG FILTER ─── */
+function filterPosts(cat, btn) {
+  closePost();
+  if (btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  document.querySelectorAll('[data-cat]').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+/* ─── BLOG POST OPEN/CLOSE ─── */
+function openPost(id) {
+  document.getElementById('postListView').classList.add('hidden');
+  document.querySelectorAll('.full-post').forEach(p => p.classList.remove('open'));
+  const el = document.getElementById('full-' + id);
+  if (el) { el.classList.add('open'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+}
+function closePost() {
+  document.querySelectorAll('.full-post').forEach(p => p.classList.remove('open'));
+  const lv = document.getElementById('postListView');
+  if (lv) lv.classList.remove('hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ─── FORM HANDLERS ─── */
+function handleDonate() { alert('Thank you! Bank account details will be available shortly. Please contact Sri. Manikanta.N at +91 9141008006 for immediate contributions.'); }
+function handleMembership() { alert('Thank you for applying! Your application will be reviewed by the Board of Trustees. We will contact you shortly.'); }
+function handleContact() { alert('Thank you for reaching out! We will get back to you soon. You may also call +91 9141008006 directly.'); }
+function handleSubscribe() { alert('Thank you for subscribing! We will keep you updated on our events and programs.'); }
+</script>
+</body>
+</html>
